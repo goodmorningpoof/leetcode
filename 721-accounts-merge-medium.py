@@ -35,11 +35,14 @@ class Solution:
                     uf.union(accIdx, email_to_account[email])
                 else:
                     email_to_account[email] = accIdx
-        
+
+        # Once the union happens, the email has to be appended to the proper leader
+        # so if email  'X' shows up in acc index 0 and 1, it should be grouped to 0, not 1
         for email, accIdx in email_to_account.items():
             leader = uf.find(accIdx)
             emailGroup[leader].append(email)
-        
+
+        # We have grouped emails, now they have to be sorted (stupid problem)
         ans = []
         for accIdx, emails in emailGroup.items():
             name = accounts[accIdx][0]
