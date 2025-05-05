@@ -1,4 +1,6 @@
 # Problem link: https://leetcode.com/problems/accounts-merge/class UnionFind:
+# Union Find shit: https://www.geeksforgeeks.org/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/
+
 
 # Create Union Find class
 class UF:
