@@ -1,17 +1,16 @@
-# Im pretty sure this is slightly inefficient but fk it, i passed all test cases
-
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
 
-        dp = [False] * (len(s) + 1) # cut down on going down the same path
-        dp[0] = True # empty str can always be segmented, base case
-        wordDictSet = set(wordDict)
-
+        dp = [False] * (len(s) + 1) 
+        dp[0] = True # empty str can always be segmented
+        wordDictSet = set(wordDict) # fast lookup, O(1)
+        maxWordLen = max(len(word) for word in wordDict) if wordDict else 0
+        
         for i in range(len(s)):
             if dp[i]:
-                for j in range(i, len(s)):
+                for j in range(i, min(i + maxWordLen, len(s))): # substring shouldn't exceed max word length in wordDict
                     if s[i:j+1] in wordDictSet:
                         dp[j + 1] = True
 
         
-        return dp[-1]
+        return dp[len(s)]
