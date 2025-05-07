@@ -1,4 +1,4 @@
-# Problem link: https://leetcode.com/problems/accounts-merge/class UnionFind:
+# Problem link: https://leetcode.com/problems/accounts-merge
 # Union Find shit: https://www.geeksforgeeks.org/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/
 
 
