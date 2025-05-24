@@ -1,5 +1,6 @@
 # Problem link: https://leetcode.com/problems/accounts-merge
 # Union Find shit: https://www.geeksforgeeks.org/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/
+# this problem is a bit hard to understand if you don't understand Union Find, i do have a video for it if it will help: https://www.youtube.com/watch?v=PAztir6pCTo&t=1360s
 
 
 # Create Union Find class
