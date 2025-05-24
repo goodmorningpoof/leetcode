@@ -2,7 +2,7 @@
 # Union Find shit: https://www.geeksforgeeks.org/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/
 
 # this problem is a bit hard to understand if you don't understand Union Find/joining disjoint sets, i do have a video for it if it will help: 
-# https://www.youtube.com/watch?v=PAztir6pCTo&t=1360s
+# https://youtu.be/ccJHQJIlSow?si=z3klb4c6czxWomYd
 
 
 # Create Union Find class
