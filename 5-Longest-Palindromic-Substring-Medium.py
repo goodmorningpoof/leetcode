@@ -1,5 +1,5 @@
 # very obvious a brute force is not feasible because you have to scan through the original string and to scan each substring you have another linear scan again and again, so overall you have crazy exponential time complexity, 
-#so something more clever is needed
+# so something more clever is needed
 
 # To check if a string like "aba" is a palindrome, we can either:
 # 1. start from the outside and compare the two characters OR
@@ -7,7 +7,7 @@
 
 # Which is better? option 2. This way we can do a linear scan through the original string and do the comparison at each character and expand outwards. This will be O(N^2) but the brute force is significantly more inefficient so this is best.
 # For ex: for 'babdf', we start at 'b' and check to the left and right, of course there is nothing to the left so b itself is the longest palindrome so far. We move onto the character 'a', we expand outwards and we see 'bab' is 
-#the longest palindrome so far
+# the longest palindrome so far
 # We keep doing this as we linearly scan through the string and we will find the longest palindrome. That being said, we have to handle the edge case of where we have an even length of characters for a palindrome like 'abba', 
 # the way to handle this is set the pointers next to each other not at the same starting position
 
