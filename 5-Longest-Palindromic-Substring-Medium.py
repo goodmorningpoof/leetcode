@@ -1,4 +1,4 @@
-# very obvious a brute force is not feasible because you have to scan through the original string and to scan each substring you have another linear complexity, so overall you have an exponential time complexity, so something more clever is needed
+# very obvious a brute force is not feasible because you have to scan through the original string and to scan each substring you have another linear scan again and again, so overall you have crazy exponential time complexity, so something more clever is needed
 
 # To check if a string like "aba" is a palindrome, we can either:
 # 1. start from the outside and compare the two characters OR
