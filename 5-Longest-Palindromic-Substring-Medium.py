@@ -20,8 +20,8 @@ class Solution:
             l, r = i, i # pointers at center position right now
             while l >= 0 and r < len(s) and s[l] == s[r]:
                 if (r - l + 1) > longest_len:
-                    longest_len = (r - l + 1)
-                    res = s[l:r+1] # splice string, remember we do + 1 because the end is not inclusive
+                    start = l
+                    longest_len = r - l + 1
                 r += 1
                 l -= 1
             
@@ -33,9 +33,10 @@ class Solution:
             # only difference is where we set the pointers for odd and even palindromes
             while l >= 0 and r < len(s) and s[l] == s[r]:
                 if (r - l + 1) > longest_len:
-                    longest_len = (r - l + 1)
-                    res = s[l:r+1] # splice string, remember we do + 1 because the end is not inclusive
+                    start = l
+                    longest_len = r - l + 1
                 r += 1
                 l -= 1
-        return res
-        
+
+        # string splicing creates a copy, we dont want to be doing that to store the palindrome every time we find a new longest palindrome so do the string splicing down here rather than above, just a little bit more efficient
+        return s[start:start + longest_len] 
