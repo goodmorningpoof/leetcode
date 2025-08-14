@@ -1,1 +1,40 @@
-# placeholder
+# very obvious a brute force is not feasible because you have to scan through the original string and to scan each substring you have another linear complexity, so overall you have an exponential time complexity, so something more clever is needed
+
+# To check if a string like "aba" is a palindrome, we can either:
+# 1. start from the outside and compare the two characters OR
+# 2. start in the middle and expand outwards and do the comparison that way
+
+# Which is better? option 2. This way we can do a linear scan through the original string and do the comparison at each character and expand outwards. This will be O(N^2) but the brute force is significantly more inefficient so this is best.
+# For ex: for 'babdf', we start at 'b' and check to the left and right, of course there is nothing to the left so b itself is the longest palindrome so far. We move on the character 'a', we expand outwards and we see 'bab' is the longest palindrome so far
+# We keep doing this as we linearly scan through the string and we will find the longest palindrome. That being said, we have to handle the edge case of where we have an even length of character for a palindrom like 'abba'
+
+
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        res = ""
+        longest_len = 0
+
+        for i in range(len(s)):
+            # odd length palindrome
+            l, r = i, i # pointers at center position right now
+            while l >= 0 and r < len(s) and s[l] == s[r]:
+                if (r - l + 1) > longest_len:
+                    longest_len = (r - l + 1)
+                    res = s[l:r+1] # splice string, remember we do + 1 because the end is not inclusive
+                r += 1
+                l -= 1
+            
+            # even length palindromes
+            l, r = i, i + 1
+    
+            # this is the same code as above, so you honestly could probably put it in a function
+            # in an interview you might want to do that obviously but yeah
+            # only difference is where we set the pointers for odd and even palindromes
+            while l >= 0 and r < len(s) and s[l] == s[r]:
+                if (r - l + 1) > longest_len:
+                    longest_len = (r - l + 1)
+                    res = s[l:r+1] # splice string, remember we do + 1 because the end is not inclusive
+                r += 1
+                l -= 1
+        return res
+        
